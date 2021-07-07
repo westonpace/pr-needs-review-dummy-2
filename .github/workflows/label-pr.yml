@@ -5,6 +5,10 @@ on:
       - ready_for_review
       - opened
       - converted_to_draft
+  pull_request_review_comment:
+    types:
+      - created
+      - edited
   pull_request_review:
 
 jobs:
