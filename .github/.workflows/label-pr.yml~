@@ -1,0 +1,19 @@
+on:
+  issue_comment:
+  pull_request:
+    types:
+      - ready_for_review
+      - opened
+      - converted_to_draft
+  pull_request_review:
+
+jobs:
+  main_job:
+    runs-on: ubuntu-latest
+    name: Update review status labels
+    steps:
+      - name: Update review status labels
+        uses: westonpace/pr-needs-review@v1
+        id: label-pr
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
