@@ -5,10 +5,6 @@ on:
       - ready_for_review
       - opened
       - converted_to_draft
-  pull_request_review_comment:
-    types:
-      - created
-      - edited
   pull_request_review:
 
 jobs:
@@ -17,7 +13,7 @@ jobs:
     name: Update review status labels
     steps:
       - name: Update review status labels
-        uses: westonpace/pr-needs-review@v0.1.7
+        uses: westonpace/pr-needs-review@v0.1.8
         id: label-pr
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
